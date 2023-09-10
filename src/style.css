@@ -1,11 +1,20 @@
+@import url(./assets/css/card.css);
+
+.card{
+    padding: 10px;
+    border-radius: var(--theme-radius--);
+    background-color:var(--theme-card-color--);
+    margin-bottom: 15px;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+ 
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,9 +22,28 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  --theme-high-color--: #2df1c7;
+  --theme-font-color--: black;
+  --theme-card-color--: #fff;
+  --theme-radius--: 10px;
 }
 
-*{
+body {
+  margin: 0 auto;
+  padding: 10px;
+
+  /* display: flex; */
+  /* place-items: center; */
+  color: rgb(48, 48, 48);
+  font-size: .8rem;
+  min-width: 320px;
+  min-height: 100vh;
+
+  width: 95vw;
+  background-color: #eeeeee;
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: content-box;
@@ -26,6 +54,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -35,17 +64,12 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+
 
 h1 {
   font-size: 3.2em;
@@ -63,9 +87,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -82,15 +108,219 @@ button:focus-visible {
   text-align: center;
 }
 
+
+
+/* @font-face {
+  font-family: charge1;
+  src: url(../fonts/iconfont.7c823ac3.woff2) format("woff2"), url(../fonts/iconfont.425873d6.woff) format("woff"), url(../fonts/iconfont.660ee3c4.ttf) format("truetype")
+} */
+/* 
+.charge1 {
+  font-family: charge1!important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.charge1-dashang-zuobanyuanjiao:before {
+  content: "\E646"
+}
+
+.charge1-dashang-youbanyuanjiao:before {
+  content: "\E647"
+}
+
+.charge1-chengweidianyuan-2:before {
+  content: "\E644"
+}
+
+.charge1-chengweidianyuan:before {
+  content: "\E645"
+}
+
+.charge1-dashangdianyuan-2:before {
+  content: "\E638"
+}
+
+.charge1-daifuwu-2:before {
+  content: "\E639"
+}
+
+.charge1-dianyuanshoucang-2:before {
+  content: "\E63A"
+}
+
+.charge1-fenxiaozhongxin-2:before {
+  content: "\E63B"
+}
+
+.charge1-quanbudingdan2:before {
+  content: "\E63C"
+}
+
+.charge1-youhuiquan-2:before {
+  content: "\E63D"
+}
+
+.charge1-yiwancheng2:before {
+  content: "\E63E"
+}
+
+.charge1-gongzuotai-2:before {
+  content: "\E63F"
+}
+
+.charge1-liuyanban-2:before {
+  content: "\E640"
+}
+
+.charge1-fuwuzhong-2:before {
+  content: "\E641"
+}
+
+.charge1-yaoqingmabangding-2:before {
+  content: "\E642"
+}
+
+.charge1-liwutujian-2:before {
+  content: "\E643"
+}
+
+.charge1-weibofang:before {
+  content: "\E636"
+}
+
+.charge1-bofangzhong:before {
+  content: "\E637"
+}
+
+.charge1-gengduoxiangpian:before {
+  content: "\E625"
+}
+
+.charge1-dashangdianyuan:before {
+  content: "\E62A"
+}
+
+.charge1-dianyuanshoucang:before {
+  content: "\E62B"
+}
+
+.charge1-daifuwu:before {
+  content: "\E62C"
+}
+
+.charge1-yaoqingmabangding:before {
+  content: "\E62D"
+}
+
+.charge1-liuyanban:before {
+  content: "\E62E"
+}
+
+.charge1-liwutujian:before {
+  content: "\E62F"
+}
+
+.charge1-fuwuzhong:before {
+  content: "\E630"
+}
+
+.charge1-gongzuotai:before {
+  content: "\E631"
+}
+
+.charge1-youhuiquan:before {
+  content: "\E632"
+}
+
+.charge1-fenxiaozhongxin:before {
+  content: "\E633"
+}
+
+.charge1-yiwancheng:before {
+  content: "\E634"
+}
+
+.charge1-quanbudingdan:before {
+  content: "\E635"
+}
+
+.charge1-wodedingdanbeijing:before {
+  content: "\E629"
+}
+
+.charge1-dianyuanzhuye:before {
+  content: "\E628"
+}
+
+.charge1-yidianzan:before {
+  content: "\E626"
+}
+
+.charge1-weidianzan:before {
+  content: "\E627"
+}
+
+.charge1-zhifu-weigouxuan:before {
+  content: "\E622"
+}
+
+.charge1-yuezhifu:before {
+  content: "\E623"
+}
+
+.charge1-zhifu-yigouxuan:before {
+  content: "\E624"
+}
+
+.charge1-biaoqianSVG:before {
+  content: "\E618"
+}
+
+.charge1-dashangxiaoxiSVG:before {
+  content: "\E619"
+}
+
+.charge1-dituSVG:before {
+  content: "\E61A"
+}
+
+.charge1-nanshengSVG:before {
+  content: "\E61B"
+}
+
+.charge1-shoucangSVG:before {
+  content: "\E61C"
+}
+
+.charge1-fenleishaixuanSVG:before {
+  content: "\E61D"
+}
+
+.charge1-nvshengSVG:before {
+  content: "\E61E"
+}
+
+.charge1-sousuoSVG:before {
+  content: "\E61F"
+} */
+
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
 }
+
